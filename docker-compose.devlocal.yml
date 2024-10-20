@@ -1,0 +1,8 @@
+services:
+  php:
+      build:
+        target: ste_core
+      volumes:
+        - "./:/var/${COMPOSE_PROJECT_NAME}"
+        - "./:$PWD"
+      working_dir: $PWD

@@ -25,7 +25,9 @@ services:
     user: "${USERID}:${GROUPID}"
     volumes:
       - "./log:/var/${COMPOSE_PROJECT_NAME}/log"
-    working_dir: /var/${COMPOSE_PROJECT_NAME}
+      - "./:/var/${COMPOSE_PROJECT_NAME}"
+      - "./:$PWD"
+    working_dir: $PWD
     networks:
       - ml-sandbox-networks
 
